@@ -1,0 +1,51 @@
+<h3 style="background-color:black;color:white"></h3>
+ <h2 class="Welcome">Welcome</h2>
+<div class="heading">
+  <img src="assets/ASSET-USER-ADMIN.png" width="72px" height="72px" />
+
+</div>
+    <form>
+           
+                 <div>      
+                   <label>find respo:</label> <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="enter name" required="required" />
+                   <button type="submit" (click)="fetchItem(name)">find</button>
+               
+                </div>
+         
+          
+        </form>
+
+<div>
+<table>
+    <tr >
+      <th>Name</th>
+      <th>Forks</th>
+      <th>Watchers</th>
+    </tr>
+    <tr *ngFor="let customer of newdata">
+      <td>{{customer.name}}</td>
+      <td>{{customer.forks}}</td>
+      <td>{{customer.watchers}}</td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  (click)="showParent(customer.name,customer.forks,customer.watchers)">pick</button>&nbsp;&nbsp;&nbsp;
+       
+      </td>
+    </tr>
+  </table>
+ 
+</div>
+<hr>
+<div>
+<table>
+    <tr >
+      <th>Name of the respo which we pick</th>
+      
+    </tr>
+    
+    <tr *ngFor="let customer of newarr">
+      <td>{{customer.name}}</td>
+       <td>{{customer.forks}}</td>
+      <td>{{customer.watchers}}</td>
+    </tr>
+  </table>
+ 
+</div>
